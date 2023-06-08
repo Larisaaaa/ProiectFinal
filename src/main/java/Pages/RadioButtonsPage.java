@@ -17,8 +17,8 @@ public class RadioButtonsPage extends BasePage {
 
 
     //Locator for Group Radio Buttons Demo
-    By GenderMaleCheckBox = By.xpath("//*[@id=\"__next\"]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[1]/label[1]/input");
-    public void clickOnTheGenderMaleCheckbox(){ driver.findElement(GenderMaleCheckBox).click();}
+    By GenderMaleOption = By.xpath("//*[@id=\"__next\"]/div/section[3]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[1]/label[1]/input");
+    public void clickOnTheGenderMaleOption(){ driver.findElement(GenderMaleOption).click();}
     By GenderFemaleCheckBox = By.xpath("//*[@id=\"__next\"]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[1]/label[2]/input");
     public void clickOnTheGenderFemaleCheckbox(){ driver.findElement(GenderFemaleCheckBox).click();}
     By GenderOtherCheckBox = By.xpath("//*[@id=\"__next\"]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[1]/label[3]/input");
@@ -28,10 +28,17 @@ public class RadioButtonsPage extends BasePage {
     public void clickOnTheAge0to5Checkbox(){ driver.findElement(Age0to5CheckBox).click();}
     By Age5to15CheckBox = By.xpath("//*[@id=\"__next\"]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/label[2]/input");
     public void clickOnTheAge5to15Checkbox(){ driver.findElement(Age5to15CheckBox).click();}
-    By Age15to50CheckBox = By.xpath("//*[@id=\"__next\"]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/label[3]/input");
+    By Age15to50CheckBox = By.xpath("/html/body/div[1]/div/section[3]/div/div/div[2]/div[2]/div[2]/div/div[1]/div[2]/label[3]/input");
     public void clickOnTheAge15to50Checkbox(){ driver.findElement(Age15to50CheckBox).click();}
-    By GetValuesOption = By.xpath(" //*[@id=\"__next\"]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[1]/button");
-    public void clickOnTheGetValuesButton(){driver.findElement(GetValuesOption).click();}
+    By GetValuesButton = By.xpath(" //*[@id=\"__next\"]/div[1]/section[3]/div/div/div[2]/div[2]/div[2]/div/div[1]/button");
+    public void clickOnTheGetValuesButton(){driver.findElement(GetValuesButton).click();}
+
+    //Disabled Checkbox
+    By CheckBox1 = By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div/div[2]/div/div/div/div[1]/label/input");
+    public void clickOnTheCheckBox1(){driver.findElement(CheckBox1).click();}
+
+    By CheckBox2 = By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div/div[2]/div/div/div/div[2]/label/input");
+    public void clickOnTheCheckBox2(){driver.findElement(CheckBox2).click();}
 
 
 

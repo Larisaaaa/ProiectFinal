@@ -21,7 +21,7 @@ public class CheckboxPageTestCases extends BasePage {
     public void clickOnTheSingleCheckboxCheckmark() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div[1]/div[1]/ul/li[2]/a")).click();
         checkboxPage.clickOnSingleCheckbox();
-        Assert.assertEquals("Success - Check box is checked", "Success - Check box is checked");
+       Assert.assertEquals("Success - Check box is checked", "Success - Check box is checked");
     }
 
     @Test
@@ -30,6 +30,7 @@ public class CheckboxPageTestCases extends BasePage {
         checkboxPage.clickOnTheFirstCheckboxOption();
         checkboxPage.clickOnTheSecondCheckboxOption();
         checkboxPage.clickOnTheThirdCheckboxOption();
+        //Ce trebuie scris ca sa termin testul?
 
 
     }
@@ -41,6 +42,7 @@ public class CheckboxPageTestCases extends BasePage {
         checkboxPage.clickOnTheSecondCheckboxOption();
         checkboxPage.clickOnTheThirdCheckboxOption();
         checkboxPage.clickOnTheForthCheckboxOption();
+        //Ce trebuie scris ca sa termin testul?
 
     }
 }

@@ -27,6 +27,14 @@ public class SimpleFormTestCases extends BasePage {
     }
 
     @Test
+    public void writeTextInCapitalLettersThenClickOnTheGetCheckedValueButton() throws InterruptedException {
+        driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[1]/a")).click();
+        simpleFormPage.selectTextField("TEST");
+        simpleFormPage.clickOnGetCheckedValue();
+        Assert.assertTrue(driver.getPageSource().contains("TEST"));
+    }
+
+    @Test
     public void writeTextAndNumbersThenClickOnTheGetCheckedValueButton() throws InterruptedException {
         driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[1]/a")).click();
         simpleFormPage.selectTextField("Test20");
@@ -65,8 +73,17 @@ public class SimpleFormTestCases extends BasePage {
         simpleFormPage.clickOnGetValuesButton();
         Assert.assertTrue(driver.getPageSource().contains("23"));
     }
-    //test in care sa scriu cu litere mari
-    //test in care sa pun litere in loc de cifre
+
+    @Test
+    public void writeLettersThenClickOnTheGetValuesButton()  throws InterruptedException {
+        driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[1]/a")).click();
+        simpleFormPage.enterA("a");
+        simpleFormPage.enterB("b");
+        Assert.assertEquals("Entered value is not a number", "ab");
+        //De ce imi da eroare?
+    }
+
+
 }
 
 
