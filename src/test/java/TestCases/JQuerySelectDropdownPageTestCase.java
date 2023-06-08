@@ -61,20 +61,21 @@ public class JQuerySelectDropdownPageTestCase extends BasePage {
         //Cum sa scriu ca NU se poate selecta tara Guam?
 
 
-        //  @Test
-        //  public void clickOnTheSelectAFileAndSelectFilePython() throws InterruptedException {
-        //    driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
-        //   jQuerySelectDropdownPage.clickOnTheSelectAFile();
-        //  jQuerySelectDropdownPage.clickOnTheSelectFilePython();
-        //  Assert.assertEquals("Python", "Python");
-        // }
+        @Test
+        public void clickOnTheSelectAFileAndSelectFilePython () throws InterruptedException {
+            driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+            jQuerySelectDropdownPage.clickOnTheSelectAFile();
+            jQuerySelectDropdownPage.clickOnTheSelectFilePython();
+            Assert.assertEquals("Python", "Python");
+        }
 
-        // @Test
-        // public void clickOnTheSelectAFileAndSelectFileUnknownScript() throws InterruptedException {
-        //   driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
-        //  jQuerySelectDropdownPage.clickOnTheSelectAFile();
-        //  jQuerySelectDropdownPage.clickOnTheSelectFileUnknownScript();
-        //  Assert.assertEquals("Unknown Script", "Unknown Script");
+        @Test
+        public void clickOnTheSelectAFileAndSelectFileUnknownScript () throws InterruptedException {
+            driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+            jQuerySelectDropdownPage.clickOnTheSelectAFile();
+            jQuerySelectDropdownPage.clickOnTheSelectFileUnknownScript();
+            Assert.assertEquals("Unknown Script", "Unknown Script");
 
+        }
     }
 }
