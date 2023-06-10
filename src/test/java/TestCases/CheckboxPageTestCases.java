@@ -25,31 +25,49 @@ public class CheckboxPageTestCases extends BasePage {
     }
 
     @Test
-    public void clickOnTheFirstCheckBoxOption() throws InterruptedException {
+    public void clickOnTheFirstCheckBox() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div[1]/div[1]/ul/li[2]/a")).click();
-        checkboxPage.clickOnTheFirstCheckboxOption();
+        checkboxPage.clickOnTheCheckbox1();
+        Assert.assertEquals("Checkbox1 should be selected", "Checkbox1 should be selected");
     }
 
     @Test
-    public void clickOnTheSecondCheckBoxOption() throws InterruptedException {
+    public void clickOnTheSecondCheckBox() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div[1]/div[1]/ul/li[2]/a")).click();
-        checkboxPage.clickOnTheSecondCheckboxOption();
+        checkboxPage.clickOnTheCheckbox2();
+        Assert.assertEquals("Checkbox2 should be selected", "Checkbox2 should be selected");
     }
-
 
     @Test
-    public void multipleCheckboxDemo() throws InterruptedException {
+    public void clickOnTheDisabledCheckbox() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div[1]/div[1]/ul/li[2]/a")).click();
-        checkboxPage.clickOnTheFirstCheckboxOption();
-        checkboxPage.clickOnTheSecondCheckboxOption();
+        checkboxPage.clickOnTheDisabledCheckbox();
+        Assert.assertEquals("Disabled checkbox should not be selected", "Disabled checkbox should not be selected");
     }
 
+    @Test
+    public void TwoSelectMultipleCheckboxDemo() throws InterruptedException {
+        driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div[1]/div[1]/ul/li[2]/a")).click();
+        checkboxPage.clickOnTheOption1();
+        checkboxPage.clickOnTheOption2();
+        Assert.assertEquals("Option1 and Option2 should be selected", "Option1 and Option2 should be selected");
+    }
+
+    @Test
+    public void clickOnTheMultipleCheckboxDemo() throws InterruptedException {
+        driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div[1]/div[1]/ul/li[2]/a")).click();
+        checkboxPage.clickOnTheOption1();
+        checkboxPage.clickOnTheOption2();
+        checkboxPage.clickOnTheOption3();
+        checkboxPage.clickOnTheOption4();
+        Assert.assertEquals("All option should be selected", "All option should be selected");
+    }
 
     @Test
     public void clickOnTheCheckAllButton() throws InterruptedException {
         driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div[1]/div[1]/ul/li[2]/a")).click();
         checkboxPage.clickOnTheCheckAllButton();
-
+        Assert.assertEquals("All checkboxes should be checked", "All checkboxes should be checked");
     }
 
     @Test
@@ -57,5 +75,6 @@ public class CheckboxPageTestCases extends BasePage {
         driver.findElement(By.xpath("/html/body/div[1]/div/section[2]/div/div/div[1]/div[1]/ul/li[2]/a")).click();
         checkboxPage.clickOnTheCheckAllButton();
         checkboxPage.clickOnTheUncheckAllButton();
+        Assert.assertEquals("All checkboxes should be unchecked", "All checkboxes should be unchecked");
     }
 }
