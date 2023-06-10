@@ -20,7 +20,7 @@ public class JQuerySelectDropdownPage extends BasePage  {
 
 
     //Locators for Multi Select - Search and Select multiple states
-    By SelectMultipleStatesCheckBox = By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div/div[2]/div[2]/span/span[1]/span/ul/li/input");
+    By SelectMultipleStatesCheckBox = By.xpath("/html/body/div[1]/div/section[2]/div/div/div/div[2]/div[2]/span/span[1]/span/ul/li/input");
     public void clickOnTheSelectMultipleStatesCheckBox(){ driver.findElement(SelectMultipleStatesCheckBox).click();}
 
     By SelectStateAlabama = By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div/div[2]/div[2]/span/span[1]/span/ul/li[1]");
@@ -29,17 +29,17 @@ public class JQuerySelectDropdownPage extends BasePage  {
     By SelectStateGeorgia = By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div/div[2]/div[2]/span/span[1]/span/ul/li[2]");
     public void clickOnTheSelectStateGeorgia(){ driver.findElement(SelectStateGeorgia).click();}
 
-    By SelectCountryWithDisabledValues = By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div/div[3]/div[2]/label");
+    By SelectCountryWithDisabledValues = By.cssSelector("#__next > div > section.mt-50 > div > div > div > div:nth-child(3) > div.py-20.px-10 > span > span.selection > span");
     public void clickOnTheSelectCountryWithDisabledValues(){ driver.findElement(SelectCountryWithDisabledValues).click();}
-    By TextBoxCountry2 = By.xpath("/html/body/span/span/span[1]/input");
+    By TextBoxCountry2 = By.cssSelector("body > span > span > span.select2-search.select2-search--dropdown > input");
     public void enterTextBoxCountry2(String arg3){driver.findElement(TextBoxCountry2).click();}
 
-    By CountryGuam = By.xpath("//*[@id=\"select2-e03a-result-ec9u-GU\"]");
+    By CountryGuam = By.id("select2-ss99-result-p5uy-GU");
     public void clickOnTheSelectCountryGuam(){ driver.findElement(CountryGuam).click();}
 
     By Country = By.id("select2-06s7-container");
     public void clickOnTheCountry(){ driver.findElement(Country).click();}
-    By SelectAFile = By.id("files");
+    By SelectAFile = By.xpath("//*[@id=\"files\"]");
     public void clickOnTheSelectAFile(){ driver.findElement(SelectAFile).click();}
 
     By FilePython = By.xpath("//*[@id=\"files\"]/optgroup[1]/option[2]");

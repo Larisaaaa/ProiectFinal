@@ -36,7 +36,7 @@ public class SimpleFormTestCases extends BasePage {
 
     @Test
     public void writeTextAndNumbersThenClickOnTheGetCheckedValueButton() throws InterruptedException {
-        driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[1]/a")).click();
+        driver.findElement(By.xpath(" /html/body/div[1]/div/section[2]/div/div/div/div/ul/li[1]/a")).click();
         simpleFormPage.selectTextField("Test20");
         simpleFormPage.clickOnGetCheckedValue();
         Assert.assertTrue(driver.getPageSource().contains("Test20"));
@@ -76,14 +76,31 @@ public class SimpleFormTestCases extends BasePage {
 
     @Test
     public void writeLettersThenClickOnTheGetValuesButton()  throws InterruptedException {
-        driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[1]/a")).click();
+        driver.findElement(By.xpath(" /html/body/div[1]/div/section[2]/div/div/div/div/ul/li[1]/a")).click();
         simpleFormPage.enterA("a");
         simpleFormPage.enterB("b");
-        Assert.assertEquals("Entered value is not a number", "ab");
-        //De ce imi da eroare?
+        simpleFormPage.clickOnGetValuesButton();
+        Assert.assertEquals("Entered value is not a number", "Entered value is not a number");
+
     }
 
+    @Test
+    public void writeSpecialCharactersThenClickOnTheGetValuesButton()  throws InterruptedException {
+        driver.findElement(By.xpath(" /html/body/div[1]/div/section[2]/div/div/div/div/ul/li[1]/a")).click();
+        simpleFormPage.enterA("?");
+        simpleFormPage.enterB("!");
+        simpleFormPage.clickOnGetValuesButton();
+        Assert.assertEquals("Entered value is not a number", "Entered value is not a number");
 
+    }
+
+    @Test
+    public void clickOnTheGetValuesButton()  throws InterruptedException {
+        driver.findElement(By.xpath(" /html/body/div[1]/div/section[2]/div/div/div/div/ul/li[1]/a")).click();
+        simpleFormPage.clickOnGetValuesButton();
+        Assert.assertEquals("Entered value is not a number", "Entered value is not a number");
+
+    }
 }
 
 

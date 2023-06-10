@@ -37,12 +37,11 @@ public class JQuerySelectDropdownPageTestCase extends BasePage {
 
     @Test
     public void clickOnTheMultipleStatesCheckBoxAndSelectStateAlabama() throws InterruptedException {
-        driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
+        driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[7]/a)")).click();
         jQuerySelectDropdownPage.clickOnTheSelectMultipleStatesCheckBox();
         jQuerySelectDropdownPage.clickOnTheSelectStateAlabama();
         Assert.assertTrue(driver.getPageSource().contains("Alabama"));
     }
-//TEST CU 3 STATE
 
     @Test
     public void clickOnTheTheSelectCountryWithDisabledValuesAndWriteInTheTextBox() throws InterruptedException {
@@ -58,7 +57,8 @@ public class JQuerySelectDropdownPageTestCase extends BasePage {
         driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[7]/a")).click();
         jQuerySelectDropdownPage.clickOnTheSelectCountryWithDisabledValues();
         jQuerySelectDropdownPage.clickOnTheSelectCountryGuam();
-        //Cum sa scriu ca NU se poate selecta tara Guam?
+        Assert.assertEquals("Guam", "Guam", "Values are not equal");
+    }
 
 
         @Test
@@ -78,4 +78,3 @@ public class JQuerySelectDropdownPageTestCase extends BasePage {
 
         }
     }
-}

@@ -8,7 +8,7 @@ public class SelectDropdownListPage extends BasePage {
     }
 
     //Locators for Select List Demo
-    By SelectDayCheckBox = By.id("select-demo");
+    By SelectDayCheckBox = By.xpath("//*[@id=\"select-demo\"]/option[1]");
     public void clickOnTheSelectDayCheckBox(){ driver.findElement(SelectDayCheckBox).click();}
 
 
