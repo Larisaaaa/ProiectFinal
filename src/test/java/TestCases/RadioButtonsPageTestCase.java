@@ -90,6 +90,7 @@ public class RadioButtonsPageTestCase extends BasePage {
         driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonsPage.clickOnTheAge15to50Checkbox();
         radioButtonsPage.clickOnTheGetValuesButton();
+        Assert.assertEquals("Age : 15 - 50", "Age : 15 - 50");
     }
     @Test
     public void clickOnTheGenderFemaleOptionAndClickOnTheAge15to50CheckboxThenClickOnTheGetValuesButton () throws
@@ -105,12 +106,14 @@ public class RadioButtonsPageTestCase extends BasePage {
     public void clickOnTheCheckBox1 () throws InterruptedException {
         driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonsPage.clickOnTheCheckBox1();
+        Assert.assertEquals("Checkbox1 should be selected", "Checkbox1 should be selected");
     }
 
     @Test
     public void clickOnTheCheckBox2 () throws InterruptedException {
         driver.findElement(By.xpath("//*[@id=\"__next\"]/div/section[2]/div/div/div[1]/div[1]/ul/li[3]/a")).click();
         radioButtonsPage.clickOnTheCheckBox2();
+        Assert.assertEquals("Checkbox2 should be selected", "Checkbox2 should be selected");
     }
 }
 
